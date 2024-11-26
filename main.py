@@ -1,9 +1,9 @@
-from contacts_functions import parse_input, add_contact, change_contact, show_phone, show_all
+from contacts_functions import (parse_input, add_contact, change_contact, show_phone,
+show_all, add_birthday_func, show_birthday, birthdays)
 from contacts_classes import AddressBook
 
 def main():
-    # contacts = {}
-    contacts=AddressBook()
+    book=AddressBook()
     print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ")
@@ -15,28 +15,19 @@ def main():
         elif command == "hello":
             print("How can I help you?")
         elif command == "add":
-            print(args)
-            print(contacts)
-            print(add_contact(args, contacts))
+            print(add_contact(args, book))
         elif command == "change":
-            print(change_contact(args, contacts))
+            print(change_contact(args, book))
         elif command == "phone":
-            print(show_phone(args, contacts))
+            print(show_phone(args, book))
         elif command == "all":
-            print(show_all(contacts))
-
+            print(show_all(book))
         elif command == "add-birthday":
-            pass
-            # реалізація
-
+            print(add_birthday_func(args, book))
         elif command == "show-birthday":
-            pass
-            # реалізація
-
+            print (show_birthday(args, book))
         elif command == "birthdays":
-            pass
-            # реалізація
-
+            print(birthdays(book))
         else:
             print("Invalid command.")
 
