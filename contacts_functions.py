@@ -56,7 +56,7 @@ def show_phone(args, book:AddressBook):
 def show_all(book:AddressBook):
     contacts_pretty_string="\n All contacts:\n"
     for v in book.values():
-        contacts_pretty_string+=f"{str(v)}\n"
+        contacts_pretty_string+=f"{v}\n"
     return contacts_pretty_string if book.values() else "No contacts"
 
 @input_error
@@ -70,7 +70,7 @@ def add_birthday_func(args, book:AddressBook):
 def show_birthday(args, book:AddressBook):
     name, *_ = args
     record = book.find(name)
-    return record.birthday if record else "Error. Contact not found"
+    return record.birthday.value if record else "Error. Contact not found"
 
 @input_error
 def birthdays(book:AddressBook):
