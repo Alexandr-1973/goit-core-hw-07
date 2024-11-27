@@ -70,7 +70,7 @@ def add_birthday_func(args, book:AddressBook):
 def show_birthday(args, book:AddressBook):
     name, *_ = args
     record = book.find(name)
-    return record.birthday.value if record else "Error. Contact not found"
+    return record.birthday.value if record.birthday else 'No information'
 
 @input_error
 def birthdays(book:AddressBook):

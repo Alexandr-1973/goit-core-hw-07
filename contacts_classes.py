@@ -28,7 +28,8 @@ class Birthday(Field):
             birthday_datatime=datetime.strptime(value,"%d.%m.%Y")
         except ValueError:
             raise ValueError("Invalid date format. Use DD.MM.YYYY")
-        super().__init__(birthday_datatime.strftime("%d.%m.%Y"))
+        super().__init__(value)
+
 
 class Record:
     def __init__(self, name):
